@@ -19,18 +19,16 @@ var jirafa = new Animal("jirafa",4,false,true,2);
 var perro = new Animal("perro");
 
 var Pokemon = function(tipo=2,poder=true,energia=true,fuerza=2){
-  var parent = new Animal();
-  var object={
-    tipo:tipo,
-    poder:poder,
-    energia:energia,
-    fuerza:fuerza,
-    atacar:function(){
-      if(energia/fuerza>1){
-        return "gano";
-      }else{
-        return "perdió";
-      }
+  var pokemon = Object.create(Animal());
+  pokemon.tipo=tipo,
+  pokemon.poder=poder,
+  pokemon.energia=energia,
+  pokemon.fuerza=fuerza,
+  pokemon.atacar=function(){
+    if(pokemon.energia/pokemon.fuerza>1){
+      return "gano";
+    }else{
+      return "perdió";
     }
   };
   return object;
